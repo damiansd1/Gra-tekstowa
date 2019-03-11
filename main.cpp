@@ -13,7 +13,7 @@ class Wrog
 {
     public:
     float HP,ATK;
-    char slabosc; //a= Atak wrêcz, z= Zaklêcia, p= Przedmioty,
+    char slabosc; //a= Atak wrÃªcz, z= ZaklÃªcia, p= Przedmioty,
     char rodzaj;
     string typ;
     Wrog()
@@ -62,11 +62,9 @@ int main()
     ATK2 = 2 + sila2*0.1 + rand()%d*0.1
      +n*0.1;
     Wrog stwor;
-
-    cout << stwor.HP <<","<<HP2 << endl;
-    cout << stwor.ATK<<","<<ATK2 << endl;
     mana=3;
     cout <<" Spotkales "<<stwor.typ<<" ma "<<stwor.HP<<" zycia i "<<stwor.ATK<<" ataku "<<endl;
+    cout <<" Ty masz "<<HP2<<" zycia "<<mana<<" many i "<<ATK2<<" ataku "<<endl
 do
     {
         cout<< "Ilosc many: "<<mana<<endl;
