@@ -67,6 +67,7 @@ int main()
     cout << stwor.ATK<<","<<ATK2 << endl;
     mana=3;
     cout <<" Spotkales "<<stwor.typ<<" ma "<<stwor.HP<<" zycia i "<<stwor.ATK<<" ataku "<<endl;
+     cout <<" Ty masz "<<HP2<<" zycia "<<mana<<" many i "<<ATK2<<" ataku "<<endl
 do
     {
         cout<< "Ilosc many: "<<mana<<endl;
