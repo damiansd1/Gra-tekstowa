@@ -13,7 +13,7 @@ class Wrog
 {
     public:
     float HP,ATK;
-    char slabosc; //a= Atak wrêcz, z= Zaklêcia, p= Przedmioty,
+    char slabosc; //a= Atak wrÃªcz, z= ZaklÃªcia, p= Przedmioty,
     char rodzaj;
     string typ;
     Wrog()
@@ -42,7 +42,7 @@ class Wrog
     }
     int sila = 10;
     int agil = 10;
-    int intl = 10;
+    int intl = 11;
 
     HP =10 + sila + rand()%d +n;
     ATK = 2 + sila*0.1 + rand()%d*0.1 +n*0.1;
