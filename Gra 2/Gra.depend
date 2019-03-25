@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1547491824 source:h:\gra\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+
+1551117226 source:f:\gra\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1549304366 source:g:\gra\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1551120208 source:c:\users\sala multimedialna\desktop\gra\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1551723198 source:g:\informatyka\c++\gra\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1551722336 source:h:\informatyka\c++\gra\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
