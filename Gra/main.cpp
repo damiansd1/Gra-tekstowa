@@ -54,11 +54,12 @@ class Wrog
 int fail(int WrogATK,int agil2int,int Wrogagil)
     {
         int fail1;
-        for (1,WrogATK)
-            if (rand()%100<(agil2int-Wrogagil))
-                fail1 = fail1+1;
-            if (rand()%100<(Wrogagil-agil2int))
-                fail1 = fail1-1;
+        int i;
+        for (i=1;i<WrogATK;i++)
+            {
+            if (rand()%100<(agil2int-Wrogagil))fail1 = fail1+1;
+            if (rand()%100<(Wrogagil-agil2int))fail1 = fail1-1;
+            }
         return fail1;
     };
 int main()
@@ -79,7 +80,7 @@ int main()
     cout << stwor.ATK<<","<<ATK2 << endl;
     mana=3;
     cout <<" Spotkales "<<stwor.typ<<" ma "<<stwor.HP<<" zycia i "<<stwor.ATK<<" ataku "<<endl;
-     cout <<" Ty masz "<<HP2<<" zycia "<<mana<<" many i "<<ATK2<<" ataku "<<endl
+     cout <<" Ty masz "<<HP2<<" zycia "<<mana<<" many i "<<ATK2<<" ataku "<<endl;
 do
     {
         cout<< "Ilosc many: "<<mana<<endl;
