@@ -18,9 +18,9 @@ class Wrog
     float HP,ATK;
     char slabosc; //a= Atak wrecz, z= Zaklecia, p= Przedmioty,
     char rodzaj;
-    int sila = 30;
-    int agil = 10;
-    int intl = 11;
+    int sila = 1;
+    int agil = 1;
+    int intl = 1;
     int lvl = 1;
     string typ;
     Wrog()
@@ -48,8 +48,8 @@ class Wrog
         typ="szczur";
     }
 
-    HP =10 + sila + rand()%d +n;
-    ATK = 2 + sila*0.1 + rand()%d*0.1 +n*0.1;
+    HP =10 + sila*10 + rand()%d*10 +n*10;
+    ATK = 2 + sila + rand()%d+n;
 
 
     }
@@ -70,7 +70,6 @@ int wynik(int HPgracz,int HPwrog)
    {
 
     int zycie;
-    int exp;
 
     if(HPwrog<=0)
         {zycie = 1;}
@@ -89,12 +88,13 @@ int main()
     int zycie = 2;
     int exp;
     int wexp;
+    int wybor;
     int lvl=1;
-    int sila2 = 10;
+    int sila2 = 5;
     int agil2 = 60;
-    int intl2 = 10;
-    HP2 = sila2 + 10 + rand()%d +n;
-    ATK2 = 2 + sila2*0.1 + rand()%d*0.1+n*0.1;
+    int intl2 = 5;
+    HP2 =sila2*10 + rand()%d*5+n*5;
+    ATK2 =sila2 + rand()%d+n;
     do
     {
     zdarzenie=(rand()+rand()/54)%3;
@@ -102,13 +102,16 @@ int main()
     {
     i++;
     Wrog stwor;
-
+    stwor.HP=stwor.lvl*10;
+    stwor.ATK=stwor.lvl;
+    stwor.agil=stwor.lvl;
+    stwor.intl=stwor.lvl;
     cout << stwor.HP <<","<<HP2 << endl;
     cout << stwor.ATK<<","<<ATK2 << endl;
     mana=3;
     cout <<" Spotkaˆe~˜ "<<stwor.typ<<" ma "<<stwor.HP<<" ¾ycia i "<<stwor.ATK<<" ataku "<<endl;
      cout <<" Ty masz "<<HP2<<" ¾ycia "<<mana<<" many i "<<ATK2<<" ataku "<<endl;
-do
+    do
     {
         cout<< "Ilosc many: "<<mana<<endl;
 
@@ -129,10 +132,49 @@ do
                     cout<<"win"<<endl;
                     wexp = stwor.lvl*10+stwor.lvl/100*rand()%100;
                     exp+=wexp;
+                    stwor.lvl++;
+                    cout<<stwor.lvl<<endl;
                 if (exp>lvl*100)
                     {
+
                         exp-=lvl*100;
                         lvl+=1;
+                        agil2+=1;
+                        intl2+=1;
+                        sila2+=1;
+                        HP2+=10;
+                        ATK2+=1;
+                        cout<<"Wybierz statystyki 2 razy. 1=sila 2=zrecznosc 3=inteligencja"<<endl;
+                        cin>>wybor;
+                        if (wybor=1)
+                        {
+                            sila2++;
+                            HP2+=10;
+                            ATK2+=1;
+                        }
+                        if (wybor=2)
+                        {
+                            agil2++;
+                        }
+                        if (wybor=1)
+                        {
+                            intl2++;
+                        }
+                        wybor = 0;
+                        cin>>wybor;
+                        if (wybor=1)
+                        {
+                            sila2++;
+                        }
+                        if (wybor=2)
+                        {
+                            agil2++;
+                        }
+                        if (wybor=1)
+                        {
+                            intl2++;
+                        }
+                        wybor = 0;
                     }
                 }
                 }
@@ -159,19 +201,60 @@ do
                 HP2 = HP2-stwor.ATK;
 
                 zycie = wynik(HP2, stwor.HP);
-                cout<<zycie<<endl;
+
                 if (zycie ==0)
                     {
                     cout<<" Game over"<<endl; zycie=-1; break;}
                 if (zycie==1){
                     cout<<"zwyciestwo"<<endl;
-                    wexp = stwor.lvl*10+stwor.lvl/100*rand()%100;
+                    wexp = stwor.lvl*100+rand()%stwor.lvl;
                     exp+=wexp;
+                     stwor.lvl++;
+                     cout<<stwor.lvl<<endl;
                 if (exp>lvl*100)
                     {
+                        cout<<"lvl up"<<endl;
                         exp-=lvl*100;
                         lvl+=1;
+                        agil2+=1;
+                        intl2+=1;
+                        sila2+=1;
+                        HP2+=10;
+                        ATK2+=1;
+                        cout<<"Wybierz statystyki 2 razy. 1=sila 2=zrecznosc 3=inteligencja"<<endl;
+                        cin>>wybor;
+                        if (wybor=1)
+                        {
+                            sila2++;
+                            HP2+=10;
+                            ATK2+=1;
+
+                        }
+                        if (wybor=2)
+                        {
+                            agil2++;
+                        }
+                        if (wybor=1)
+                        {
+                            intl2++;
+                        }
+                        wybor = 0;
+                        cin>>wybor;
+                        if (wybor=1)
+                        {
+                            sila2++;
+                        }
+                        if (wybor=2)
+                        {
+                            agil2++;
+                        }
+                        if (wybor=1)
+                        {
+                            intl2++;
+                        }
+                        wybor = 0;
                     }
+
                 }
                 }
                 break;
