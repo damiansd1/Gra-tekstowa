@@ -73,7 +73,7 @@ int main()
     int sATK;
     int sila2 = 3;
     int agil2 = 3;
-    int intl2 = 3;
+    int intl2 = 10;
     mana = intl2;
     HP2 = sila2*5 + rand()%d +n;
     ATK2 = 2 + sila2 + rand()%d*0.1+n*0.1;
@@ -87,6 +87,7 @@ int main()
 
     cout << stwor.HP <<","<<HP2 << endl;
     cout << stwor.ATK<<","<<ATK2 << endl;
+    mana = intl2;
 
     cout <<" Spotkaˆe~˜ "<<stwor.typ<<" ma "<<stwor.HP<<" ¾ycia i "<<stwor.ATK<<" ataku "<<endl;
      cout <<" Ty masz "<<HP2<<" ¾ycia "<<mana<<" many i "<<ATK2<<" ataku "<<endl;
@@ -98,7 +99,15 @@ do
             {
             case 'z':
                 {
-                cout<<"1. Cios pomyślunku, ATK:"<<intl2*2<<endl;
+                cout<<"1. Mala kula ognia, ATK:"<<intl2*2<<" koszt many 1"<<endl;
+                cout<<"2. Tajemne pociski, ATK:"<<"losowo od "<<intl2<< " do "<<intl2*5<<" koszt many 3"<<endl;
+                cout<<"3. Mały pocisk mrozu. Zamraza przeciwnika na 1 ture. ATK;"<<intl2*2<<" koszt many 5"<<endl;
+                cout<<"4. Kula ognia, ATK:"<<intl2*5<<" koszt many 5"<<endl;
+                cout<<"5. Większe tajemne pociski, ATK:"<<"losowo od "<<intl2*2<< " do "<<intl2*10<<" koszt many 10"<<endl;
+                cout<<"6. Pocisk mrozu. Zamraza przeciwnika na 1 ture. ATK;"<<intl2*5<<" koszt many 15"<<endl;
+                cout<<"7. Pyrowybuch, ATK:"<<intl2*2<<" koszt many 1"<<endl;
+                cout<<"8. Ognisty deszcz, ATK:"<<"losowo od "<<intl2<< " do "<<intl2*5<<" koszt many 3"<<endl;
+                cout<<"9. Nowa mrozu. Zamraza przeciwnika na 1 ture. ATK;"<<intl2*2<<" koszt many 5"<<endl;
                 rspell=getch();
                 if (rspell=='1')
                 {
@@ -135,12 +144,32 @@ do
                 }
                 if (rspell=='2')
                 {
-                    for(int r1=1;6>=r1;r1++)
+                    if (mana>=3)
                     {
-                        sATK+=(rand()%intl2)*4/5 ;
-                        sATK+=intl2*1/5;
-                    }
+                            mana = mana-3;
+                            sATK = 0;
+                        for(int n=1;n<6;n++)
+                        {
+                            cout<< n <<endl;
+                            sATK+=((rand()%intl2)*4/5) ;
+                            sATK+=(intl2*1/5);
+                        }
                     cout << sATK <<endl;
+                    }
+                    if (mana<3)
+                        cout<<"brak many"<<endl;
+
+                }
+                if (rspell=='3')
+                {
+                    if (mana>=5)
+                    {
+                    stwor.HP = stwor.HP-(intl2*2);
+                    mana = mana - 5;
+                    }
+                    if (mana<5)
+                        cout<<"brak many"<<endl;
+
                 }
                 }
 
