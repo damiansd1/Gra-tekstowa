@@ -119,7 +119,7 @@ int wynik(int HPgracz,int HPwrog)
     else if(HPgracz<=0)
         {zycie = 0;}
     else if ((HPgracz>0)&&(HPwrog>0)){
-                cout<< "zycie wroga " << HPwrog <<", twoje zycie "<<HPgracz << endl;
+                cout<<"Mana "<<mana<<" zycie wroga " << HPwrog <<", twoje zycie "<<HPgracz << endl;
                 zycie = 2;}
 
                 return zycie;
@@ -144,7 +144,7 @@ int main()
     {
          Wrog stwor;
 
-    zdarzenie=(rand()+rand()/54)%3;
+    zdarzenie=(rand()+rand()/54)%3+;
     if(zdarzenie==0)//walka
     {
     i++;
@@ -260,7 +260,7 @@ int main()
                 cout<<"4. Smocze zioniecie, ATK:"<<intl2*5<<" koszt many 5"<<endl;
                 cout<<"5. Większe tajemne pociski, ATK:"<<"losowo od "<<intl2*2<< " do "<<intl2*10<<" koszt many 10"<<endl;
                 cout<<"6. Zamiec. Zamraza przeciwnika na 1 ture. ATK;"<<intl2*5<<" koszt many 10"<<endl;
-                cout<<"7. Pyrowybuch, ATK:"<<intl2*10<<" koszt many 10"<<endl;
+                cout<<"7. Pyrowybuch, ATK:"<<intl2*10<<" koszt many 18"<<endl;
                 cout<<"8. Ognisty deszcz, ATK:"<<"losowo od "<<intl2*4<< " do "<<intl2*20<<" koszt many 20"<<endl;
                 cout<<"9. Nowa mrozu. Zamraza przeciwnika na 1 ture. ATK;"<<intl2*10<<" koszt many 20"<<endl;
                 rspell=getch();
@@ -354,13 +354,13 @@ int main()
                 }
                 if (rspell=='7')
                 {
-                   if (mana>=10)
+                   if (mana>=18)
                     {
                     HP = HP-(intl2*10);
                     HP2 = HP2-stwor.ATK;
                     mana = mana - 10;
                     }
-                    else if (mana<10)
+                    else if (mana<18)
                     {
                     cout<<"Brak many"<< endl;
                     }
@@ -595,7 +595,7 @@ int main()
         case 1:
         {
         P1.typ ="Mikstura Many";
-        P1.Mana=1;
+        P1.Mana=4*(lvl);
         }
         break;
         case 2:
@@ -630,7 +630,7 @@ int main()
     case 1:
         {
         P2.typ ="Mikstura Many";
-        P2.Mana=1;
+        P2.Mana=4*(lvl);
         }
         break;
         case 2:
@@ -665,7 +665,7 @@ int main()
     case 1:
         {
         P3.typ ="Mikstura Many";
-        P3.Mana=1;
+        P3.Mana=4*(lvl);
         }
         break;
         case 2:
@@ -700,7 +700,7 @@ int main()
     case 1:
         {
         P4.typ ="Mikstura Many";
-        P4.Mana=1;
+        P4.Mana=4*(lvl);
         }
         break;
         case 2:
@@ -735,7 +735,7 @@ int main()
     case 1:
         {
         P5.typ ="Mikstura Many";
-        P5.Mana=1;
+        P5.Mana=4*(lvl);
         }
         break;
         case 2:
@@ -758,11 +758,7 @@ int main()
         {
         cout<<"Znalazłęś przedmiot ale masz ich za dużo."<<endl<<"1. "<<P1.typ<<endl<<"2. "<<P2.typ<<endl<<"3. "<<P3.typ<<endl<<"4. "<<P4.typ<<endl<<"5. "<<P5.typ<<endl<<"Czy chcesz któryś zastąpić T/N"<<endl;
         odp=getch();
-        if((odp='n')||(odp='N'))
-        {
-            break;
-        }
-        else if ((odp='t')||(odp='T'))
+        if ((odp=='t')||(odp=='T'))
         {
         cout<<endl<<"Który?"<<endl;
         numer_przed2=getch();
@@ -784,7 +780,7 @@ int main()
         case 1:
         {
         P1.typ ="Mikstura Many";
-        P1.Mana=1;
+        P1.Mana=4*(lvl);
         }
         break;
         case 2:
@@ -819,7 +815,7 @@ int main()
     case 1:
         {
         P2.typ ="Mikstura Many";
-        P2.Mana=1;
+        P2.Mana=4*(lvl);
         }
         break;
         case 2:
@@ -854,7 +850,7 @@ int main()
     case 1:
         {
         P3.typ ="Mikstura Many";
-        P3.Mana=1;
+        P3.Mana=4*(lvl);
         }
         break;
         case 2:
@@ -889,7 +885,7 @@ int main()
     case 1:
         {
         P4.typ ="Mikstura Many";
-        P4.Mana=1;
+        P4.Mana=4*(lvl);
         }
         break;
         case 2:
@@ -924,7 +920,7 @@ int main()
     case 1:
         {
         P5.typ ="Mikstura Many";
-        P5.Mana=1;
+        P5.Mana=4*(lvl);
         }
         break;
         case 2:
@@ -945,7 +941,10 @@ int main()
         break;
         }
         }
-
+        else if((odp=='n')||(odp=='N'))
+        {
+            break;
+        }
         }
         }
         }
