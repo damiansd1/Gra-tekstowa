@@ -19,4 +19,4 @@ sila- daje życie i siłę ataku wręcz.
 
 agil- daje zręczność (zwiększa szanse na unikniecie części obrażeń)
 
-intl- zwiększ ilość manii i obrażenia zaklęć
+intl- zwiększa ilość many i obrażenia zaklęć
