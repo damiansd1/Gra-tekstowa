@@ -29,9 +29,9 @@ int rspell;
 int wexp;
 int wybor;
 int lvl=0;
-int sila2 = 3;//statystyki początkowe gracza. xxx2 statystyka gracza
-int agil2 = 3;
-int intl2 = 3;
+int sila2 = 5;//statystyki początkowe gracza. xxx2 statystyka gracza
+int agil2 = 5;
+int intl2 = 5;
 int HP;
 int Wrogz;
 bool zamrozenie=false;
