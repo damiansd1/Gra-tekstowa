@@ -1,6 +1,6 @@
 # Gra-tekstowa
 Gra na konkurs C++
-ścieżka do pliku: /Gra-tekstowa v3.0/Gra2.cbp
+ścieżka do pliku: /Gra-tekstowa v4.0/Gra2.cbp
 
 instrukcja
 
@@ -22,3 +22,5 @@ sila- daje życie(10) i siłę ataku wręcz(1).
 agil- daje zręczność (zwiększa szanse na unikniecie części obrażeń o 1 procent)
 
 intl- zwiększa ilość many(1) i obrażenia zaklęć(bazowo 2 ale zależy od zaklęcia bo mają różne przeliczniki)
+
+niewrażliwość- nie otrzymuje obrarzeń
