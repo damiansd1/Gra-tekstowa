@@ -34,6 +34,7 @@ int agil2 = 3;
 int intl2 = 3;
 int HP;
 int Wrogz;
+bool zamrozenie=false;
 class Wrog
 {
     public:
@@ -46,6 +47,8 @@ class Wrog
     int intl;
     int lvl;
     int mana;
+    bool zamrozenie;
+    int niewrazliwosc;//niewrażliwość
     string typ;
     Wrog()
     {
@@ -172,7 +175,7 @@ int main()
          Wrog stwor;
 
     zdarzenie=(rand()+rand()/54)%3;//generacja zdarzenia
-    if(zdarzenie==0)//walka
+    if((zdarzenie==0)||(zdarzenie==4))//walka
     {
     i++;
 
@@ -297,7 +300,7 @@ int main()
                 {
                    if (mana>0)
                     {
-                    stwor.HP = stwor.HP-(intl2*2);
+                    stwor.HP = stwor.HP-(intl2*2)*stwor.niewrazliwosc;
                     HP2 = HP2-(stwor.ATK-fail(stwor.ATK,agil2,stwor.agil));
                     mana = mana - 1;
                     }
@@ -319,7 +322,7 @@ int main()
                             sATK+=(intl2*1/5);
                             cout<<sATK<<endl;
                         }
-                            HP = HP-sATK;
+                            stwor.HP = stwor.HP-sATK*stwor.niewrazliwosc;
                             HP2 = HP2-(stwor.ATK-fail(stwor.ATK,agil2,stwor.agil));
                             mana = mana-3;
                     }
@@ -331,8 +334,9 @@ int main()
                 {
                     if (mana>=5)
                     {
-                    stwor.HP = stwor.HP-(intl2*2);
+                    stwor.HP = stwor.HP-(intl2*2)*stwor.niewrazliwosc;
                     mana = mana - 5;
+                    zamrozenie = true;
                     }
                     if (mana<5)
                         cout<<"brak many"<<endl;
@@ -342,7 +346,7 @@ int main()
                 {
                    if (mana>=5)
                     {
-                    stwor.HP = stwor.HP-(intl2*5);
+                    stwor.HP = stwor.HP-(intl2*5)*stwor.niewrazliwosc;
                     HP2 = HP2-(stwor.ATK-fail(stwor.ATK,agil2,stwor.agil));
                     mana = mana - 5;
                     }
@@ -364,7 +368,7 @@ int main()
                             sATK+=((rand()%intl2)*4/5) ;
                             sATK+=(intl2*1/5);
                         }
-                            stwor.HP = stwor.HP-sATK;
+                            stwor.HP = stwor.HP-sATK*stwor.niewrazliwosc;
                             HP2 = HP2-(stwor.ATK-fail(stwor.ATK,agil2,stwor.agil));
                     }
                     if (mana<3)
@@ -375,8 +379,9 @@ int main()
                 {
                     if (mana>=stwor.ATK-fail(stwor.ATK,agil2,stwor.agil))
                     {
-                    stwor.HP = stwor.HP-(intl2*5);
+                    stwor.HP = stwor.HP-(intl2*5)*stwor.niewrazliwosc;
                     mana = mana - 5;
+                    zamrozenie = true;
                     }
                     if (mana<10)
                         cout<<"brak many"<<endl;
@@ -386,7 +391,7 @@ int main()
                 {
                    if (mana>=15)
                     {
-                    stwor.HP = stwor.HP-(intl2*10);
+                    stwor.HP = stwor.HP-(intl2*10)*stwor.niewrazliwosc;
                     HP2 = HP2-(stwor.ATK-fail(stwor.ATK,agil2,stwor.agil));
                     mana = mana - 10;
                     }
@@ -408,7 +413,7 @@ int main()
                             sATK+=((rand()%intl2)*4/5) ;
                             sATK+=(intl2*1/5);
                         }
-                            stwor.HP = stwor.HP-sATK;
+                            stwor.HP = stwor.HP-sATK*stwor.niewrazliwosc;
                             HP2 = HP2-(stwor.ATK-fail(stwor.ATK,agil2,stwor.agil));
                     }
                     if (mana<15)
@@ -419,8 +424,9 @@ int main()
                 {
                     if (mana>=15)
                     {
-                    stwor.HP = stwor.HP-(intl2*10);
+                    stwor.HP = stwor.HP-(intl2*10)*stwor.niewrazliwosc;
                     mana = mana - 15;
+                    zamrozenie = true;
                     }
                     if (mana<15)
                         cout<<"brak many"<<endl;
@@ -486,7 +492,7 @@ int main()
 
             case 'a'://skrypt podstawowego ataku wszystko to samo co wcześniej
                 {
-                stwor.HP = stwor.HP-ATK2;
+                stwor.HP = stwor.HP-ATK2*stwor.niewrazliwosc;
                 HP2 = HP2-stwor.ATK-fail(stwor.ATK,agil2,stwor.agil);
 
                 zycie = wynik(HP2, stwor.HP);
@@ -556,8 +562,10 @@ int main()
                  {
                  case'1'://użycie 1 przedmiotu
                     {
+                        HP=stwor.HP;
                         P1.uzycie();
-                        zycie = wynik(HP2, stwor.HP);
+                        zycie = wynik(HP2, HP);
+                        stwor.HP=HP;
                 if (zycie ==0)
                     {
                     cout<<" Game over"<<endl; zycie=-1; break;}
@@ -613,9 +621,10 @@ int main()
                 }
                     break;
                     case'2'://użycie 2 przedmiotu
-                    {
+                    {   HP=stwor.HP;
                         P2.uzycie();
-                        zycie = wynik(HP2, stwor.HP);
+                        zycie = wynik(HP2, HP);
+                        stwor.HP=HP;
                         if (zycie ==0)
                     {
                     cout<<" Game over"<<endl; zycie=-1; break;}
@@ -674,8 +683,10 @@ int main()
                     break;
                     case'3'://użycie 3 przedmiotu
                     {
+                        HP=stwor.HP;
                         P3.uzycie();
-                        zycie = wynik(HP2, stwor.HP);
+                        zycie = wynik(HP2, HP);
+                        stwor.HP=HP;
                         if (zycie ==0)
                     {
                     cout<<" Game over"<<endl; zycie=-1; break;}
@@ -733,8 +744,10 @@ int main()
                     break;
                     case'4'://użycie 4 przedmiotu
                     {
+                        HP=stwor.HP;
                         P4.uzycie();
-                        zycie = wynik(HP2, stwor.HP);
+                        zycie = wynik(HP2,HP);
+                        stwor.HP=HP;
                         if (zycie ==0)
                     {
                     cout<<" Game over"<<endl; zycie=-1; break;}
@@ -791,9 +804,10 @@ int main()
                     }
                     break;
                     case'5'://użycie 5 przedmiotu
-                    {
+                    {   HP=stwor.HP;
                         P5.uzycie();
                         zycie = wynik(HP2, stwor.HP);
+                        stwor.HP=HP;
                         if (zycie ==0)
                     {
                     cout<<" Game over"<<endl; zycie=-1; break;}
@@ -864,7 +878,10 @@ int main()
         {
             cout<<" Game over"<<endl; zycie=-1; break;
         }
-        switch (stwor.rodzaj)//czary wroga
+        stwor.niewrazliwosc=1;
+        if((stwor.HP>0)&&(zamrozenie!=true))//czary wroga
+        {
+        switch (stwor.rodzaj)
         {
     case 2:
         {
@@ -900,12 +917,20 @@ int main()
     case 8:
         {
           Wrogz=rand()%6;
-        if(((Wrogz==3)||(Wrogz==4))&&(stwor.mana>=5))
+        if((Wrogz==4)&&(stwor.mana>=5))
          {
             cout<<"Wróg urzył 'Zabójczego uderzenia'"<<endl;
             stwor.mana-=5;
             HP2-=HP2/2;
             wynik(HP2,stwor.HP);
+         }
+        if((Wrogz==5)&&(stwor.mana>=3))
+         {
+            cout<<"Wróg urzył 'Ukrycia'"<<endl;
+            stwor.mana-=3;
+            stwor.niewrazliwosc=0;
+            wynik(HP2,stwor.HP);
+            cout<<" Wróg jest niewrażliwy"<<endl;
          }
         }
     case 9:
@@ -921,10 +946,17 @@ int main()
          }
         }
         }
+        }
+        if ((stwor.HP<=0)&&(stwor.rodzaj==9))//czary agonalne
+        {
+         cout<<"Wróg urzył 'Ostatniego słowa'"<<endl;
+        HP2=HP2/2;
+        wynik(HP2,stwor.HP);
+        }
     }while(zycie>1);
     }
 
-    else if(zdarzenie==1)//Nic
+    else if((zdarzenie==1)||(zdarzenie==3))//Nic
     {
         cout<<"Nic tu nie ma.Id« dalej"<<endl;
     }
