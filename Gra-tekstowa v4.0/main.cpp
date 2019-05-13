@@ -45,7 +45,7 @@ class Wrog
     int sila;
     int agil;
     int intl;
-    int lvl;
+    int lvl = 10;
     int mana;
     bool zamrozenie;
     int niewrazliwosc;//niewrażliwość
@@ -189,9 +189,10 @@ int main()
     stwor.ATK=stwor.lvl;
     stwor.agil=stwor.lvl;
     stwor.intl=stwor.lvl;
-    if(i==10)//generacja bossa
+    if(i%10==0)//generacja bossa
     {
         stwor.rodzaj = rand()%3 +7;
+        cout<<stwor.rodzaj<<endl;
     if(stwor.rodzaj==7)
     {
         stwor.typ="Wodz Orkow";
@@ -953,6 +954,7 @@ int main()
         HP2=HP2/2;
         wynik(HP2,stwor.HP);
         }
+        zamrozenie=false;
     }while(zycie>1);
     }
 
@@ -978,7 +980,7 @@ int main()
         case 1://ustawianie cech przedmiotu
         {
         P1.typ ="Mikstura Many";
-        P1.Mana=4*(lvl*1);
+        P1.Mana=4*(lvl+1);
         }
         break;
         case 2://ustawianie cech przedmiotu
