@@ -50,7 +50,7 @@ class Wrog
     Wrog()
     {
 
-    rodzaj =2;// rand()%6 +1;//generacja rodzaju przeciwnika
+    rodzaj =rand()%6 +1;//generacja rodzaju przeciwnika
     if (rodzaj==1)
     {
         typ="paj¥k";
