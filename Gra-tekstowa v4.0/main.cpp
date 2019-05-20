@@ -29,7 +29,7 @@ int rspell;
 int wexp;
 int wybor;
 int lvl=0;
-int sila2 = 3;//statystyki pocz¥tkowe gracza. xxx2 statystyka gracza
+int sila2 = 3;//statystyki poczÂ¥tkowe gracza. xxx2 statystyka gracza
 int agil2 = 3;
 int intl2 = 3;
 int HP;
@@ -48,7 +48,7 @@ class Wrog
     int lvl = 10;
     int mana;
     bool zamrozenie;
-    int niewrazliwosc;//niewra¾liwo˜†
+    int niewrazliwosc = 0;//niewraÂ¾liwoËœâ€ 
     string typ;
     Wrog()
     {
@@ -56,7 +56,7 @@ class Wrog
     rodzaj =rand()%6 +1;//generacja rodzaju przeciwnika
     if (rodzaj==1)
     {
-        typ="paj¥k";
+        typ="pajÂ¥k";
     }
     else if(rodzaj==2)
     {
@@ -88,7 +88,7 @@ class Przedmiot
 {
     public:
     string typ;
-    int Heal, ATK, Mnoz_Atk, Mnoz_Heal, Mnoz_agil, Mana, Czas;//wˆa˜ciwo˜ci przedmiot¢w
+    int Heal, ATK, Mnoz_Atk, Mnoz_Heal, Mnoz_agil, Mana, Czas;//wË†aËœciwoËœci przedmiotÂ¢w
     Przedmiot()
     {
      Heal=0;
@@ -139,7 +139,7 @@ int fail(float WrogATK,int agil2,int Wrogagil)//funkcja uniku
 
         return fail1;
 }
-int wynik(int HPgracz,int HPwrog)//sprawdzanie stanu postaci 1=zwyci©stwo 0=˜mier† 2=walka
+int wynik(int HPgracz,int HPwrog)//sprawdzanie stanu postaci 1=zwyciÂ©stwo 0=Ëœmierâ€  2=walka
    {
 
     int zycie;
@@ -163,7 +163,7 @@ int main()
     Przedmiot P3;
     Przedmiot P4;
     Przedmiot P5;
-    P1.typ ="Mikstura Bur¾uj krysztaˆu";//ustawianie startowego przedmiotu
+    P1.typ ="Mikstura BurÂ¾uj krysztaË†u";//ustawianie startowego przedmiotu
     P1.ATK =30*(lvl+1);
     P1.Heal =30*(lvl+1);
     P1.Mana= -10;
@@ -207,7 +207,7 @@ int main()
     }
     }
 
-    if (stwor.rodzaj==1)//przydzielanie statystyk poszczeg¢lnym przeciwnikom
+    if (stwor.rodzaj==1)//przydzielanie statystyk poszczegÂ¢lnym przeciwnikom
     {
         stwor.HP=stwor.HP*0.5;
         stwor.ATK=stwor.ATK*1.25;
@@ -271,12 +271,12 @@ int main()
     }
     }
      stwor.mana=stwor.intl;
-     mana=intl2;//przydziaˆ many dla bohatera
-     HP=stwor.HP;//specjalna zmienna dla przedmiot¢w
-    cout << HP <<","<<HP2 << endl;//wy˜wietlanie ekranu pocz¥tkowego walki
+     mana=intl2;//przydziaË† many dla bohatera
+     HP=stwor.HP;//specjalna zmienna dla przedmiotÂ¢w
+    cout << HP <<","<<HP2 << endl;//wyËœwietlanie ekranu poczÂ¥tkowego walki
     cout << stwor.ATK<<","<<ATK2 << endl;
-    cout <<" Spotkaˆe˜~ "<<stwor.typ<<" ma "<<HP<<" ¾ycia i "<<stwor.ATK<<" ataku "<<endl;
-     cout <<" Ty masz "<<HP2<<" ¾ycia "<<mana<<" many i "<<ATK2<<" ataku "<<endl;
+    cout <<" SpotkaË†eËœ~ "<<stwor.typ<<" ma "<<HP<<" Â¾ycia i "<<stwor.ATK<<" ataku "<<endl;
+     cout <<" Ty masz "<<HP2<<" Â¾ycia "<<mana<<" many i "<<ATK2<<" ataku "<<endl;
     do
     {
 
@@ -285,13 +285,13 @@ int main()
         komenda=getch();
         switch (komenda)
             {
-            case 'z'://zakl©cia. Lista i poszeg¢lne zakl©cia.
+            case 'z'://zaklÂ©cia. Lista i poszegÂ¢lne zaklÂ©cia.
                 {
                 cout<<"1. Mala kula ognia, ATK:"<<intl2*2<<" koszt many 1"<<endl;
                 cout<<"2. Tajemne pociski, ATK:"<<"losowo od "<<intl2<< " do "<<intl2*5<<" koszt many 5"<<endl;
-                cout<<"3. Maˆy pocisk mrozu. Zamraza przeciwnika na 1 ture. ATK;"<<intl2*2<<" koszt many 5"<<endl;
+                cout<<"3. MaË†y pocisk mrozu. Zamraza przeciwnika na 1 ture. ATK;"<<intl2*2<<" koszt many 5"<<endl;
                 cout<<"4. Smocze zioniecie, ATK:"<<intl2*5<<" koszt many 5"<<endl;
-                cout<<"5. Wi©ksze tajemne pociski, ATK:"<<"losowo od "<<intl2*2<< " do "<<intl2*10<<" koszt many 10"<<endl;
+                cout<<"5. WiÂ©ksze tajemne pociski, ATK:"<<"losowo od "<<intl2*2<< " do "<<intl2*10<<" koszt many 10"<<endl;
                 cout<<"6. Zamiec. Zamraza przeciwnika na 1 ture. ATK;"<<intl2*5<<" koszt many 10"<<endl;
                 cout<<"7. Pyrowybuch, ATK:"<<intl2*10<<" koszt many 15"<<endl;
                 cout<<"8. Ognisty deszcz, ATK:"<<"losowo od "<<intl2*4<< " do "<<intl2*20<<" koszt many 20"<<endl;
@@ -321,13 +321,13 @@ int main()
                         {
                             sATK+=((rand()%intl2)*4/5) ;
                             sATK+=(intl2*1/5);
-                            cout<<sATK<<endl;
+                            
                         }
                             stwor.HP = stwor.HP-sATK*stwor.niewrazliwosc;
                             HP2 = HP2-(stwor.ATK-fail(stwor.ATK,agil2,stwor.agil));
                             mana = mana-3;
                     }
-                    else if (mana<3)
+                    else if (mana<5)
                         cout<<"brak many"<<endl;
 
                 }
@@ -365,14 +365,14 @@ int main()
                             sATK = 0;
                         for(int n=1;n<11;n++)
                         {
-                            cout<< n <<endl;
+                       
                             sATK+=((rand()%intl2)*4/5) ;
                             sATK+=(intl2*1/5);
                         }
                             stwor.HP = stwor.HP-sATK*stwor.niewrazliwosc;
                             HP2 = HP2-(stwor.ATK-fail(stwor.ATK,agil2,stwor.agil));
                     }
-                    if (mana<3)
+                    if (mana<10)
                         cout<<"brak many"<<endl;
 
                 }
@@ -396,7 +396,7 @@ int main()
                     HP2 = HP2-(stwor.ATK-fail(stwor.ATK,agil2,stwor.agil));
                     mana = mana - 10;
                     }
-                    else if (mana<18)
+                    else if (mana<15)
                     {
                     cout<<"Brak many"<< endl;
                     }
@@ -410,7 +410,7 @@ int main()
                             sATK = 0;
                         for(int n=1;n<21;n++)
                         {
-                            cout<< n <<endl;
+
                             sATK+=((rand()%intl2)*4/5) ;
                             sATK+=(intl2*1/5);
                         }
@@ -433,19 +433,19 @@ int main()
                         cout<<"brak many"<<endl;
 
                 }
-                zycie = wynik(HP2, stwor.HP);//skrypt wykonuj¥cy akcj© w zale¾no˜ci od stanu bohatera 1=wygrana i zwi©kszenie do˜wiadzenia 2=nic 0=˜mier†
+                zycie = wynik(HP2, stwor.HP);//skrypt wykonujÂ¥cy akcjÂ© w zaleÂ¾noËœci od stanu bohatera 1=wygrana i zwiÂ©kszenie doËœwiadzenia 2=nic 0=Ëœmierâ€ 
 
-                if (zycie ==0)//skrypt ˜mierci. pojawia si© wsz©dzie na wszelki wypadek i ¾eby zapobiec powt¢rzeni¥ skryptu zmieniamy parametr na -1
+                if (zycie ==0)//skrypt Ëœmierci. pojawia siÂ© wszÂ©dzie na wszelki wypadek i Â¾eby zapobiec powtÂ¢rzeniÂ¥ skryptu zmieniamy parametr na -1
                     {
                     cout<<" Game over"<<endl; zycie=-1; break;}
-                if (zycie==1){//skrypt zwyci©stwa
+                if (zycie==1){//skrypt zwyciÂ©stwa
                     cout<<"zwyciestwo"<<endl;
                     wexp = stwor.lvl*100+rand()%stwor.lvl;
                     exp+=wexp;
 
 
                 }
-                if (exp>lvl*100)//zdobywanie poziom¢w
+                if (exp>lvl*100)//zdobywanie poziomÂ¢w
                     {
                         cout<<"lvl up"<<endl;
                         exp-=lvl*100;
@@ -455,7 +455,7 @@ int main()
                         sila2+=1;
                         HP2+=10;
                         ATK2+=1;
-                        cout<<"Wybierz statystyki 2 razy. 1=sila 2=zrecznosc 3=inteligencja"<<endl;//wyb¢r statystyk dodatkowych
+                        cout<<"Wybierz statystyki 2 razy. 1=sila 2=zrecznosc 3=inteligencja"<<endl;//wybÂ¢r statystyk dodatkowych
                         cin>>wybor;
                         if (wybor=1)
                         {
@@ -491,7 +491,7 @@ int main()
                 break;
                 }
 
-            case 'a'://skrypt podstawowego ataku wszystko to samo co wcze˜niej
+            case 'a'://skrypt podstawowego ataku wszystko to samo co wczeËœniej
                 {
                 stwor.HP = stwor.HP-ATK2*stwor.niewrazliwosc;
                 HP2 = HP2-stwor.ATK-fail(stwor.ATK,agil2,stwor.agil);
@@ -554,14 +554,14 @@ int main()
                 }
                 }
                 break;
-            case 'p'://skrypt urzycia przedmiot¢w
+            case 'p'://skrypt urzycia przedmiotÂ¢w
                 {
 
                  cout<<"1. "<<P1.typ<<endl<<"2. "<<P2.typ<<endl<<"3. "<<P3.typ<<endl<<"4. "<<P4.typ<<endl<<"5. "<<P5.typ<<endl;
                  numer_przed=getch();
                  switch(numer_przed)
                  {
-                 case'1'://u¾ycie 1 przedmiotu
+                 case'1'://uÂ¾ycie 1 przedmiotu
                     {
                         HP=stwor.HP;
                         P1.uzycie();
@@ -621,7 +621,7 @@ int main()
                     }
                 }
                     break;
-                    case'2'://u¾ycie 2 przedmiotu
+                    case'2'://uÂ¾ycie 2 przedmiotu
                     {   HP=stwor.HP;
                         P2.uzycie();
                         zycie = wynik(HP2, HP);
@@ -682,7 +682,7 @@ int main()
 
                     }
                     break;
-                    case'3'://u¾ycie 3 przedmiotu
+                    case'3'://uÂ¾ycie 3 przedmiotu
                     {
                         HP=stwor.HP;
                         P3.uzycie();
@@ -743,7 +743,7 @@ int main()
                 }
                     }
                     break;
-                    case'4'://u¾ycie 4 przedmiotu
+                    case'4'://uÂ¾ycie 4 przedmiotu
                     {
                         HP=stwor.HP;
                         P4.uzycie();
@@ -804,7 +804,7 @@ int main()
                 }
                     }
                     break;
-                    case'5'://u¾ycie 5 przedmiotu
+                    case'5'://uÂ¾ycie 5 przedmiotu
                     {   HP=stwor.HP;
                         P5.uzycie();
                         zycie = wynik(HP2, stwor.HP);
@@ -869,7 +869,7 @@ int main()
                 }
                  default:
                 {
-                cout<<"brak mo¾liwosci ataku lub leczenia"<<endl;
+                cout<<"brak moÂ¾liwosci ataku lub leczenia"<<endl;
                 }
 
                 break;
@@ -889,7 +889,7 @@ int main()
         Wrogz=rand()%3;
          if((Wrogz==2)&&(stwor.mana>=1))
          {
-            cout<<"Wr¢g urzyˆ 'dodatkowego ataku'"<<endl;
+            cout<<"WrÂ¢g urzyË† 'dodatkowego ataku'"<<endl;
             stwor.mana-=1;
             HP2-=stwor.ATK;
             wynik(HP2,stwor.HP);
@@ -901,14 +901,14 @@ int main()
          Wrogz=rand()%4;
          if((Wrogz==2)&&(stwor.mana>=3))
          {
-            cout<<"Wr¢g urzyˆ 'ataku loa'"<<endl;
+            cout<<"WrÂ¢g urzyË† 'ataku loa'"<<endl;
             stwor.mana-=3;
             HP2-=1*stwor.intl;
             wynik(HP2,stwor.HP);
          }
         if((Wrogz==2)&&(stwor.mana>=3))
          {
-            cout<<"Wr¢g urzyˆ 'leczenia loa'"<<endl;
+            cout<<"WrÂ¢g urzyË† 'leczenia loa'"<<endl;
             stwor.mana-=1;
             stwor.HP+=3*stwor.intl;
             wynik(HP2,stwor.HP);
@@ -920,18 +920,18 @@ int main()
           Wrogz=rand()%6;
         if((Wrogz==4)&&(stwor.mana>=5))
          {
-            cout<<"Wr¢g urzyˆ 'Zab¢jczego uderzenia'"<<endl;
+            cout<<"WrÂ¢g urzyË† 'ZabÂ¢jczego uderzenia'"<<endl;
             stwor.mana-=5;
             HP2-=HP2/2;
             wynik(HP2,stwor.HP);
          }
         if((Wrogz==5)&&(stwor.mana>=3))
          {
-            cout<<"Wr¢g urzyˆ 'Ukrycia'"<<endl;
+            cout<<"WrÂ¢g urzyË† 'Ukrycia'"<<endl;
             stwor.mana-=3;
             stwor.niewrazliwosc=0;
             wynik(HP2,stwor.HP);
-            cout<<" Wr¢g jest niewra¾liwy"<<endl;
+            cout<<" WrÂ¢g jest niewraÂ¾liwy"<<endl;
          }
         }
     case 9:
@@ -939,7 +939,7 @@ int main()
           Wrogz=rand()%6;
         if(((Wrogz==3)||(Wrogz==4)||(Wrogz==5))&&(stwor.mana>=5))
          {
-            cout<<"Wr¢g urzyˆ 'Wyssania ¾ycia'"<<endl;
+            cout<<"WrÂ¢g urzyË† 'Wyssania Â¾ycia'"<<endl;
             stwor.mana-=5;
             HP2-=5*stwor.intl;
             stwor.HP+=5*stwor.intl;
@@ -950,7 +950,7 @@ int main()
         }
         if ((stwor.HP<=0)&&(stwor.rodzaj==9))//czary agonalne
         {
-         cout<<"Wr¢g urzyˆ 'Ostatniego sˆowa'"<<endl;
+         cout<<"WrÂ¢g urzyË† 'Ostatniego sË†owa'"<<endl;
         HP2=HP2/2;
         wynik(HP2,stwor.HP);
         }
@@ -960,18 +960,18 @@ int main()
 
     else if((zdarzenie==1)||(zdarzenie==3))//Nic
     {
-        cout<<"Nic tu nie ma.Id« dalej"<<endl;
+        cout<<"Nic tu nie ma.IdÂ« dalej"<<endl;
     }
     else if(zdarzenie==2)//Przedmiot
   {
-        if(P1.typ=="")//sprawdanie kolejnych wypadk¢w w przypadku znaleziena przedmiotu.
+        if(P1.typ=="")//sprawdanie kolejnych wypadkÂ¢w w przypadku znaleziena przedmiotu.
         {
         r=rand()%4;
         switch(r)//losowanie typu przedmiotu.
         {
     case 0://ustawianie cech przedmiotu.
         {
-        P1.typ ="Mikstura Bur¾uj krysztaˆu";
+        P1.typ ="Mikstura BurÂ¾uj krysztaË†u";
         P1.ATK =30*(lvl+1);
         P1.Heal =30*(lvl+1);
         P1.Mana= -10;
@@ -985,18 +985,18 @@ int main()
         break;
         case 2://ustawianie cech przedmiotu
         {
-        P1.typ ="Maˆa mikstura obra¾eä";
+        P1.typ ="MaË†a mikstura obraÂ¾eÃ¤";
         P1.ATK = 10*(lvl+1);
         }
         break;
         case 3://ustawianie cech przedmiotu
         {
-        P1.typ ="Maˆ¥ mikstura heal";
+        P1.typ ="MaË†Â¥ mikstura heal";
         P1.Heal =10*(lvl+1);
         }
         break;
         }
-        cout<<"Znalazˆe˜ przedmiot: "<<P1.typ<<endl<<" ATK:"<<P1.ATK<<" Heal:"<<P1.Heal<<" Mana:"<<P1.Mana<<endl;//Inforacje na temat znaezionego przedmiotu
+        cout<<"ZnalazË†eËœ przedmiot: "<<P1.typ<<endl<<" ATK:"<<P1.ATK<<" Heal:"<<P1.Heal<<" Mana:"<<P1.Mana<<endl;//Inforacje na temat znaezionego przedmiotu
         }
          else
         {
@@ -1007,7 +1007,7 @@ int main()
         {
     case 0:
         {
-        P2.typ ="Mikstura Bur¾uj krysztaˆu";
+        P2.typ ="Mikstura BurÂ¾uj krysztaË†u";
         P2.ATK =30*(lvl+1);
         P2.Heal =30*(lvl+1);
         P2.Mana= -10;
@@ -1021,18 +1021,18 @@ int main()
         break;
         case 2:
         {
-        P2.typ ="Maˆa mikstura obra¾eä";
+        P2.typ ="MaË†a mikstura obraÂ¾eÃ¤";
         P2.ATK = 10*(lvl+1);
         }
         break;
         case 3:
         {
-        P2.typ ="Maˆ¥ mikstura heal";
+        P2.typ ="MaË†Â¥ mikstura heal";
         P2.Heal =10*(lvl+1);
         }
         break;
         }
-        cout<<"Znalazˆe˜ przedmiot: "<<P2.typ<<endl<<" ATK:"<<P2.ATK<<" Heal:"<<P2.Heal<<" Mana:"<<P2.Mana<<endl;
+        cout<<"ZnalazË†eËœ przedmiot: "<<P2.typ<<endl<<" ATK:"<<P2.ATK<<" Heal:"<<P2.Heal<<" Mana:"<<P2.Mana<<endl;
         }
         else
         {
@@ -1043,7 +1043,7 @@ int main()
         {
     case 0:
         {
-        P3.typ ="Mikstura Bur¾uj krysztaˆu";
+        P3.typ ="Mikstura BurÂ¾uj krysztaË†u";
         P3.ATK =30*(lvl+1);
         P3.Heal =30*(lvl+1);
         P3.Mana= -10;
@@ -1057,18 +1057,18 @@ int main()
         break;
         case 2:
         {
-        P3.typ ="Maˆa mikstura obra¾eä";
+        P3.typ ="MaË†a mikstura obraÂ¾eÃ¤";
         P3.ATK = 10*(lvl+1);
         }
         break;
         case 3:
         {
-        P3.typ ="Maˆ¥ mikstura heal";
+        P3.typ ="MaË†Â¥ mikstura heal";
         P3.Heal =10*(lvl+1);
         }
         break;
         }
-        cout<<"Znalazˆe˜ przedmiot: "<<P3.typ<<endl<<" ATK:"<<P3.ATK<<" Heal:"<<P3.Heal<<" Mana:"<<P3.Mana<<endl;
+        cout<<"ZnalazË†eËœ przedmiot: "<<P3.typ<<endl<<" ATK:"<<P3.ATK<<" Heal:"<<P3.Heal<<" Mana:"<<P3.Mana<<endl;
         }
         else
         {
@@ -1079,7 +1079,7 @@ int main()
         {
     case 0:
         {
-        P4.typ ="Mikstura Bur¾uj krysztaˆu";
+        P4.typ ="Mikstura BurÂ¾uj krysztaË†u";
         P4.ATK =30*(lvl+1);
         P4.Heal =30*(lvl+1);
         P4.Mana= -10;
@@ -1093,18 +1093,18 @@ int main()
         break;
         case 2:
         {
-        P4.typ ="Maˆa mikstura obra¾eä";
+        P4.typ ="MaË†a mikstura obraÂ¾eÃ¤";
         P4.ATK = 10*(lvl+1);
         }
         break;
         case 3:
         {
-        P4.typ ="Maˆ¥ mikstura heal";
+        P4.typ ="MaË†Â¥ mikstura heal";
         P4.Heal =10*(lvl+1);
         }
         break;
         }
-        cout<<"Znalazˆe˜ przedmiot: "<<P4.typ<<endl<<" ATK:"<<P4.ATK<<" Heal:"<<P4.Heal<<" Mana:"<<P4.Mana<<endl;
+        cout<<"ZnalazË†eËœ przedmiot: "<<P4.typ<<endl<<" ATK:"<<P4.ATK<<" Heal:"<<P4.Heal<<" Mana:"<<P4.Mana<<endl;
         }
 
         else
@@ -1116,7 +1116,7 @@ int main()
         {
     case 0:
         {
-        P5.typ ="Mikstura Bur¾uj krysztaˆu";
+        P5.typ ="Mikstura BurÂ¾uj krysztaË†u";
         P5.ATK =30*(lvl+1);
         P5.Heal =30*(lvl+1);
         P5.Mana= -10;
@@ -1130,27 +1130,27 @@ int main()
         break;
         case 2:
         {
-        P5.typ ="Maˆa mikstura obra¾eä";
+        P5.typ ="MaË†a mikstura obraÂ¾eÃ¤";
         P5.ATK = 10*(lvl+1);
         }
         break;
         case 3:
         {
-        P5.typ ="Maˆ¥ mikstura heal";
+        P5.typ ="MaË†Â¥ mikstura heal";
         P5.Heal =10*(lvl+1);
         }
         break;
         }
-        cout<<"Znalazˆe˜ przedmiot: "<<P5.typ<<endl<<" ATK:"<<P5.ATK<<" Heal:"<<P5.Heal<<" Mana:"<<P5.Mana<<endl;
+        cout<<"ZnalazË†eËœ przedmiot: "<<P5.typ<<endl<<" ATK:"<<P5.ATK<<" Heal:"<<P5.Heal<<" Mana:"<<P5.Mana<<endl;
         }
         else
         {
 
-        cout<<"Znalazˆ©˜ przedmiot ale masz ich za du¾o."<<endl<<"1. "<<P1.typ<<endl<<"2. "<<P2.typ<<endl<<"3. "<<P3.typ<<endl<<"4. "<<P4.typ<<endl<<"5. "<<P5.typ<<endl<<"Czy chcesz kt¢ry˜ zast¥pi† T/N"<<endl;
+        cout<<"ZnalazË†Â©Ëœ przedmiot ale masz ich za duÂ¾o."<<endl<<"1. "<<P1.typ<<endl<<"2. "<<P2.typ<<endl<<"3. "<<P3.typ<<endl<<"4. "<<P4.typ<<endl<<"5. "<<P5.typ<<endl<<"Czy chcesz ktÂ¢ryËœ zastÂ¥piâ€  T/N"<<endl;
         odp=getch();
         if ((odp=='t')||(odp=='T'))
         {
-        cout<<endl<<"Kt¢ry?"<<endl;
+        cout<<endl<<"KtÂ¢ry?"<<endl;
         numer_przed2=getch();
         switch(numer_przed2)
         {
@@ -1161,7 +1161,7 @@ int main()
         {
     case 0:
         {
-        P1.typ ="Mikstura Bur¾uj krysztaˆu";
+        P1.typ ="Mikstura BurÂ¾uj krysztaË†u";
         P1.ATK =30*(lvl+1);
         P1.Heal =30*(lvl+1);
         P1.Mana= -10;
@@ -1175,18 +1175,18 @@ int main()
         break;
         case 2:
         {
-        P1.typ ="Maˆa mikstura obra¾eä";
+        P1.typ ="MaË†a mikstura obraÂ¾eÃ¤";
         P1.ATK = 10*(lvl+1);
         }
         break;
         case 3:
         {
-        P1.typ ="Maˆ¥ mikstura heal";
+        P1.typ ="MaË†Â¥ mikstura heal";
         P1.Heal =10*(lvl+1);
         }
         break;
         }
-        cout<<"Znalazˆe˜ przedmiot: "<<P1.typ<<endl<<" ATK:"<<P1.ATK<<" Heal:"<<P1.Heal<<" Mana:"<<P1.Mana<<endl;
+        cout<<"ZnalazË†eËœ przedmiot: "<<P1.typ<<endl<<" ATK:"<<P1.ATK<<" Heal:"<<P1.Heal<<" Mana:"<<P1.Mana<<endl;
         }
         break;
         case '2':
@@ -1196,7 +1196,7 @@ int main()
         {
     case 0:
         {
-        P2.typ ="Mikstura Bur¾uj krysztaˆu";
+        P2.typ ="Mikstura BurÂ¾uj krysztaË†u";
         P2.ATK =30*(lvl+1);
         P2.Heal =30*(lvl+1);
         P2.Mana= -10;
@@ -1210,18 +1210,18 @@ int main()
         break;
         case 2:
         {
-        P2.typ ="Maˆa mikstura obra¾eä";
+        P2.typ ="MaË†a mikstura obraÂ¾eÃ¤";
         P2.ATK = 10*(lvl+1);
         }
         break;
         case 3:
         {
-        P2.typ ="Maˆ¥ mikstura heal";
+        P2.typ ="MaË†Â¥ mikstura heal";
         P2.Heal =10*(lvl+1);
         }
         break;
         }
-        cout<<"Znalazˆe˜ przedmiot: "<<P2.typ<<endl<<" ATK:"<<P2.ATK<<" Heal:"<<P2.Heal<<" Mana:"<<P2.Mana<<endl;
+        cout<<"ZnalazË†eËœ przedmiot: "<<P2.typ<<endl<<" ATK:"<<P2.ATK<<" Heal:"<<P2.Heal<<" Mana:"<<P2.Mana<<endl;
         }
         break;
         case '3':
@@ -1231,7 +1231,7 @@ int main()
         {
     case 0:
         {
-        P3.typ ="Mikstura Bur¾uj krysztaˆu";
+        P3.typ ="Mikstura BurÂ¾uj krysztaË†u";
         P3.ATK =30*(lvl+1);
         P3.Heal =30*(lvl+1);
         P3.Mana= -10;
@@ -1245,18 +1245,18 @@ int main()
         break;
         case 2:
         {
-        P3.typ ="Maˆa mikstura obra¾eä";
+        P3.typ ="MaË†a mikstura obraÂ¾eÃ¤";
         P3.ATK = 10*(lvl+1);
         }
         break;
         case 3:
         {
-        P3.typ ="Maˆ¥ mikstura heal";
+        P3.typ ="MaË†Â¥ mikstura heal";
         P3.Heal =10*(lvl+1);
         }
         break;
         }
-        cout<<"Znalazˆe˜ przedmiot: "<<P3.typ<<endl<<" ATK:"<<P3.ATK<<" Heal:"<<P3.Heal<<" Mana:"<<P3.Mana<<endl;
+        cout<<"ZnalazË†eËœ przedmiot: "<<P3.typ<<endl<<" ATK:"<<P3.ATK<<" Heal:"<<P3.Heal<<" Mana:"<<P3.Mana<<endl;
         }
         break;
         case '4':
@@ -1266,7 +1266,7 @@ int main()
         {
     case 0:
         {
-        P4.typ ="Mikstura Bur¾uj krysztaˆu";
+        P4.typ ="Mikstura BurÂ¾uj krysztaË†u";
         P4.ATK =30*(lvl+1);
         P4.Heal =30*(lvl+1);
         P4.Mana= -10;
@@ -1280,18 +1280,18 @@ int main()
         break;
         case 2:
         {
-        P4.typ ="Maˆa mikstura obra¾eä";
+        P4.typ ="MaË†a mikstura obraÂ¾eÃ¤";
         P4.ATK = 10*(lvl+1);
         }
         break;
         case 3:
         {
-        P4.typ ="Maˆ¥ mikstura heal";
+        P4.typ ="MaË†Â¥ mikstura heal";
         P4.Heal =10*(lvl+1);
         }
         break;
         }
-        cout<<"Znalazˆe˜ przedmiot: "<<P4.typ<<endl<<" ATK:"<<P4.ATK<<" Heal:"<<P4.Heal<<" Mana:"<<P4.Mana<<endl;
+        cout<<"ZnalazË†eËœ przedmiot: "<<P4.typ<<endl<<" ATK:"<<P4.ATK<<" Heal:"<<P4.Heal<<" Mana:"<<P4.Mana<<endl;
         }
         break;
         case '5':
@@ -1301,7 +1301,7 @@ int main()
         {
     case 0:
         {
-        P5.typ ="Mikstura Bur¾uj krysztaˆu";
+        P5.typ ="Mikstura BurÂ¾uj krysztaË†u";
         P5.ATK =30*(lvl+1);
         P5.Heal =30*(lvl+1);
         P5.Mana= -10;
@@ -1315,18 +1315,18 @@ int main()
         break;
         case 2:
         {
-        P5.typ ="Maˆa mikstura obra¾eä";
+        P5.typ ="MaË†a mikstura obraÂ¾eÃ¤";
         P5.ATK = 10*(lvl+1);
         }
         break;
         case 3:
         {
-        P5.typ ="Maˆ¥ mikstura heal";
+        P5.typ ="MaË†Â¥ mikstura heal";
         P5.Heal =10*(lvl+1);
         }
         break;
         }
-        cout<<"Znalazˆe˜ przedmiot: "<<P5.typ<<endl<<" ATK:"<<P5.ATK<<" Heal:"<<P5.Heal<<" Mana:"<<P5.Mana<<endl;
+        cout<<"ZnalazË†eËœ przedmiot: "<<P5.typ<<endl<<" ATK:"<<P5.ATK<<" Heal:"<<P5.Heal<<" Mana:"<<P5.Mana<<endl;
         }
         break;
         }
@@ -1351,7 +1351,7 @@ int main()
     }
     getchar();
     }while(zycie>0);
-    if (zycie ==0){//koniec mam nadzieje ¾e miˆo si© przegl¥daˆo. Damian i Adam
+    if (zycie ==0){//koniec mam nadzieje Â¾e miË†o siÂ© przeglÂ¥daË†o. Damian i Adam
    cout<<" Game over"<<endl;
     }
 
