@@ -1,0 +1,95 @@
+# depslib dependency file v1.0
+1547491824 source:h:\gra\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+
+1551117226 source:f:\gra\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1549304366 source:g:\gra\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1551120208 source:c:\users\sala multimedialna\desktop\gra\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1551723198 source:g:\informatyka\c++\gra\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1551722336 source:h:\informatyka\c++\gra\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1553683582 source:c:\users\adam\desktop\gra-tekstowa v1.0\gra 2\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1554130299 source:c:\users\adam\desktop\gra-tekstowa v2.0\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1557163758 source:c:\users\sala multimedialna\desktop\gra-tekstowa v2.0\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1557250621 source:c:\users\damian\desktop\gra-tekstowa-end2\desktop\gra-tekstowa v2.0\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+
+1557667150 source:c:\users\damian\desktop\wersja gotowa bez faila\desktop\gra-tekstowa v2.0\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+
+1557685233 source:c:\users\adam\desktop\gra-tekstowa-master\wersja gotowa z komentarzami do zrobienia dla adama\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+
+1558598634 source:c:\users\adam\desktop\gra-tekstowa v4.0\main.cpp
+	<iostream>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+
