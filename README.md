@@ -1,7 +1,5 @@
 # Gra-tekstowa
 Gra na konkurs C++
-ścieżka do pliku: /Gra-tekstowa v4.0/Gra2.cbp
-
 instrukcja
 
 podczas walki
